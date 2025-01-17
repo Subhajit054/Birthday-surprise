@@ -1,14 +1,6 @@
-gsap.registerPlugin(ScrollTrigger);
-
-window.addEventListener("load", () => {
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: ".wrapper",
-      start: "top top",
-      end: "+=150%",
-      pin: true,
-      scrub: true,
-      markers: true,
-    },
-  }).to(".section.hero", { scale: 1.2, ease: "power1.inOut" });
-});
+window.onload = function () {
+    const name = prompt("Enter the name of the birthday person:");
+    if (name) {
+        document.getElementById("birthday-message").textContent = `Happy Birthday, ${name}!`;
+    }
+};
