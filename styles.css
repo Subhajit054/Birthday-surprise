@@ -11,14 +11,18 @@
 
 .content .section {
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* Each section takes up 100% of the viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Hero Section */
+/* Hero Section with Maintained Aspect Ratio */
 .content .section.hero {
-  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fhappy-birthday-card.html&psig=AOvVaw0WVpIXEgUra6dvkZrS0Aps&ust=1737213453581000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjA9POG_YoDFQAAAAAdAAAAABAE");
+  background-image: url("https://www.dreamstime.com/photos-images/happy-birthday-card.jpg"); /* Replace with direct image URL */
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* Gradient Sections */
@@ -28,4 +32,15 @@
 
 .content .section.gradient-blue {
   background: linear-gradient(135deg, #0072ff, #00c6ff);
+}
+
+/* Ensure sections adapt to smaller screens */
+@media (max-width: 768px) {
+  .content .section {
+    height: 100vh; /* Maintain full screen height for mobile */
+  }
+
+  .content .section.hero {
+    background-size: contain; /* Adjust image scaling for smaller screens */
+  }
 }
