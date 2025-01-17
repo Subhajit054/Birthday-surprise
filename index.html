@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
+    <title>Happy Birthday Surprise!</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1 id="birthday-message">Happy Birthday, [Name]!</h1>
-        <p>Wishing you a fantastic year ahead filled with joy and success!</p>
-        <div class="confetti"></div>
+    <!-- Initial Gift Box -->
+    <div id="gift-box" class="center">
+        <img src="gift.png" alt="Gift Box" class="gift">
+        <button id="open-button">Double Click to Open</button>
     </div>
+
+    <!-- Balloons -->
+    <div id="balloons-container" class="hidden">
+        <h2>Pop the Balloons!</h2>
+        <div id="balloons"></div>
+    </div>
+
+    <!-- Final Message -->
+    <div id="final-message" class="hidden">
+        <h1>Happy Birthday, [Name]!</h1>
+        <p>Wishing you a day filled with joy and surprises!</p>
+        <div class="poppers"></div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
