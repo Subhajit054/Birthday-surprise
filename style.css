@@ -55,19 +55,33 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
     z-index: 2;
-    opacity: 0;
-    animation: fadeIn 2s ease-in-out forwards;
 }
 
-#final-message h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+/* Animated Text */
+.animated-text {
+    font-size: 2rem;
+    font-weight: bold;
+    animation: colorChange 3s infinite;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-#final-message p {
-    font-size: 1.5rem;
+@keyframes colorChange {
+    0% {
+        color: #ff69b4;
+    }
+    25% {
+        color: #ffa500;
+    }
+    50% {
+        color: #32cd32;
+    }
+    75% {
+        color: #87ceeb;
+    }
+    100% {
+        color: #ff4500;
+    }
 }
 
 /* Animations */
@@ -88,14 +102,5 @@ body {
     100% {
         transform: translateY(-120vh);
         opacity: 0;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
     }
 }
