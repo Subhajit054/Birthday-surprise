@@ -3,11 +3,11 @@ const balloonsContainer = document.getElementById("balloons-container");
 const finalMessage = document.getElementById("final-message");
 
 giftBox.addEventListener("click", () => {
-    giftBox.classList.add("hidden");
-    releaseBalloons();
+    giftBox.classList.add("hidden"); // Hide gift box
+    releaseBalloons(); // Show balloons
     setTimeout(() => {
-        finalMessage.classList.remove("hidden");
-    }, 5000); // Show final message after 5 seconds
+        finalMessage.classList.remove("hidden"); // Show birthday wishes
+    }, 5000); // After balloons animation
 });
 
 function releaseBalloons() {
