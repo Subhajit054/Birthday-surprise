@@ -1,15 +1,23 @@
 const giftBox = document.getElementById("gift-box");
+const giftImage = document.getElementById("gift-image");
 const balloonsContainer = document.getElementById("balloons-container");
 const finalMessage = document.getElementById("final-message");
 const doubleClickMessage = document.getElementById("double-click-message");
 
 // Double-click event to open the gift box
 giftBox.addEventListener("dblclick", () => {
-    giftBox.classList.add("hidden"); // Hide gift box
-    releaseBalloons(); // Show balloons
+    // Fade out the gift image
+    giftImage.style.opacity = "0";
+    doubleClickMessage.style.opacity = "0";
+
+    // After 1 second, hide the gift box and release balloons
     setTimeout(() => {
-        finalMessage.classList.remove("hidden"); // Show birthday wishes
-    }, 5000); // After balloons animation
+        giftBox.classList.add("hidden"); // Hide gift box
+        releaseBalloons(); // Show balloons
+        setTimeout(() => {
+            finalMessage.classList.remove("hidden"); // Show birthday wishes
+        }, 5000); // After balloons animation
+    }, 1000);
 });
 
 function releaseBalloons() {
