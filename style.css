@@ -2,14 +2,13 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: radial-gradient(circle, #fbc2eb, #a6c1ee);
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #fbc2eb, #a6c1ee);
     overflow: hidden;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    height: 100vh;
 }
 
 /* Hidden Elements */
@@ -17,37 +16,32 @@ body {
     display: none;
 }
 
-/* Instruction Message */
-#instruction {
-    position: absolute;
-    top: 10%;
-    text-align: center;
-    font-size: 1.5rem;
-    color: #ffffff;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    animation: fadeInOut 3s infinite;
-    z-index: 3;
-}
-
-/* Gift Box */
+/* Gift Box (Full-Screen) */
 #gift-box {
     position: relative;
+    width: 100vw;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    animation: zoomIn 2s ease-in-out;
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 #gift-box img {
     max-width: 80%;
     max-height: 80%;
     object-fit: contain;
-    cursor: pointer;
     animation: bounce 2s infinite;
+}
+
+#double-click-message {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    animation: fadeInOut 2s infinite;
 }
 
 /* Balloons */
@@ -64,11 +58,10 @@ body {
 .balloon {
     position: absolute;
     bottom: -100px;
-    width: 70px;
-    height: 100px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), #ff69b4);
+    width: 60px;
+    height: 80px;
+    background: radial-gradient(circle, #ff69b4, #ff1493);
     border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     animation: floatUp 6s ease-in-out infinite;
 }
 
@@ -79,75 +72,22 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    color: white;
     z-index: 2;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 2s ease-out forwards;
+    padding: 1rem;
 }
 
-.animated-wish {
-    font-size: 2.5rem;
+.animated-text {
+    font-size: 2rem;
     font-weight: bold;
-    color: linear-gradient(90deg, #ff1493, #32cd32, #87ceeb);
-    animation: colorCycle 5s infinite;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    animation: colorChange 3s infinite;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Animations */
-@keyframes fadeInOut {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-@keyframes floatUp {
+/* Keyframes */
+@keyframes colorChange {
     0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-150vh) scale(0.8);
-        opacity: 0;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes zoomIn {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes colorCycle {
-    0% {
-        color: #ff1493;
+        color: #ff69b4;
     }
     25% {
         color: #ffa500;
@@ -163,6 +103,35 @@ body {
     }
 }
 
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     #gift-box img {
@@ -170,23 +139,27 @@ body {
         max-height: 90%;
     }
 
-    .animated-wish {
-        font-size: 2rem;
+    #double-click-message {
+        font-size: 1.2rem;
     }
 
-    .balloon {
-        width: 50px;
-        height: 70px;
-    }
-}
-
-@media (max-width: 480px) {
-    .animated-wish {
+    .animated-text {
         font-size: 1.5rem;
     }
 
     .balloon {
         width: 40px;
         height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .animated-text {
+        font-size: 1.2rem;
+    }
+
+    .balloon {
+        width: 30px;
+        height: 50px;
     }
 }
