@@ -22,7 +22,7 @@ giftBox.addEventListener("dblclick", () => {
 
 function releaseBalloons() {
     balloonsContainer.classList.remove("hidden");
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 50; i++) {
         const balloon = document.createElement("div");
         balloon.className = "balloon";
         balloon.style.left = `${Math.random() * 100}vw`;
