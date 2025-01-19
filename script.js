@@ -12,12 +12,12 @@ giftBox.addEventListener("click", () => {
 
 function releaseBalloons() {
     balloonsContainer.classList.remove("hidden");
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 200; i++) {
         const balloon = document.createElement("div");
         balloon.className = "balloon";
         balloon.style.left = `${Math.random() * 100}vw`;
         balloon.style.background = getRandomColor();
-        balloon.style.animationDuration = `${Math.random() * 2 + 4}s`;
+        balloon.style.animationDuration = `${Math.random() * 3 + 3}s`;
         balloonsContainer.appendChild(balloon);
 
         balloon.addEventListener("animationend", () => {
