@@ -1,12 +1,14 @@
 const giftBox = document.getElementById("gift-box");
 const balloonsContainer = document.getElementById("balloons-container");
 const finalMessage = document.getElementById("final-message");
+const instruction = document.getElementById("instruction");
 
-giftBox.addEventListener("click", () => {
+giftBox.addEventListener("dblclick", () => {
+    instruction.classList.add("hidden"); // Hide instruction
     giftBox.classList.add("hidden"); // Hide gift box
     releaseBalloons(); // Show balloons
     setTimeout(() => {
-        finalMessage.classList.remove("hidden"); // Show birthday wishes
+        finalMessage.classList.remove("hidden"); // Show final message
     }, 5000); // After balloons animation
 });
 
