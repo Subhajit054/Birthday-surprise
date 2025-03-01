@@ -16,7 +16,7 @@ giftBox.addEventListener("dblclick", () => {
         releaseBalloons(); // Show balloons
         setTimeout(() => {
             finalMessage.classList.remove("hidden"); // Show birthday wishes
-        }, 5000); // After balloons animation
+        }, 5000); // After balloons   animation 
     }, 1000);
 });
 
