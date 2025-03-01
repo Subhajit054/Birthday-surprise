@@ -40,3 +40,4 @@ function getRandomColor() {
     const colors = ["#ff69b4", "#ff1493", "#ffa500", "#32cd32", "#87ceeb", "#ff4500"];
     return colors[Math.floor(Math.random() * colors.length)];
 }
+   
